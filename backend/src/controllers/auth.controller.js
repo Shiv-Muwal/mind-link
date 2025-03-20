@@ -28,7 +28,7 @@ export const signup = async (req, res) => {
     });
 
     if (newUser) {
-   // generate jwt token here
+      // generate jwt token here
       generateToken(newUser._id, res);
       await newUser.save();
 
@@ -100,7 +100,7 @@ export const updateProfile = async (req, res) => {
       { profilePic: uploadResponse.secure_url },
       { new: true }
     );
- 
+
     res.status(200).json(updatedUser);
   } catch (error) {
     console.log("error in update profile:", error);
